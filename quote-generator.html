@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .quote {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            color: #555;
+        }
+        .author {
+            font-size: 18px;
+            font-style: italic;
+            margin-top: 20px;
+            color: #777;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="quote" class="quote">
+        "The only way to do great work is to love what you do."
+    </div>
+    <div id="author" class="author">
+        - Steve Jobs
+    </div>
+    <button onclick="generateQuote()" class="button">
+        <i class="fa fa-refresh"></i> New Quote
+    </button>
+</div>
+
+<script>
+    const quotes = [
+        { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+        { text: "In the end, we will remember not the words of our enemies, but the silence of our friends.", author: "Martin Luther King Jr." },
+        { text: "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.", author: "Ralph Waldo Emerson" },
+        { text: "Success is not final, failure is not fatal: It is the courage to continue that counts.", author: "Winston Churchill" },
+        { text: "It does not matter how slowly you go as long as you do not stop.", author: "Confucius" },
+        { text: "You must be the change you wish to see in the world.", author: "Mahatma Gandhi" },
+        { text: "The only thing we have to fear is fear itself.", author: "Franklin D. Roosevelt" },
+        { text: "The best way to predict the future is to create it.", author: "Abraham Lincoln" },
+        { text: "I think, therefore I am.", author: "René Descartes" },
+        { text: "The unexamined life is not worth living.", author: "Socrates" },
+        { text: "Life is what happens when you're busy making other plans.", author: "John Lennon" },
+        { text: "The purpose of life is not to be happy. It is to be useful, to be honorable, to be compassionate, to have it make some difference that you have lived and lived well.", author: "Ralph Waldo Emerson" },
+        { text: "Do not go where the path may lead, go instead where there is no path and leave a trail.", author: "Ralph Waldo Emerson" },
+        { text: "To live is the rarest thing in the world. Most people exist, that is all.", author: "Oscar Wilde" },
+        { text: "Don’t cry because it’s over, smile because it happened.", author: "Dr. Seuss" },
+        { text: "In three words I can sum up everything I've learned about life: it goes on.", author: "Robert Frost" },
+        { text: "The only limit to our realization of tomorrow is our doubts of today.", author: "Franklin D. Roosevelt" },
+        { text: "We are all in the gutter, but some of us are looking at the stars.", author: "Oscar Wilde" },
+        { text: "Be yourself; everyone else is already taken.", author: "Oscar Wilde" },
+        { text: "Not everything that is faced can be changed, but nothing can be changed until it is faced.", author: "James Baldwin" },
+    ];
+
+    function generateQuote() {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        const randomQuote = quotes[randomIndex];
+        document.getElementById('quote').textContent = `"${randomQuote.text}"`;
+        document.getElementById('author').textContent = `- ${randomQuote.author}`;
+    }
+</script>
+
+</body>
+</html>
